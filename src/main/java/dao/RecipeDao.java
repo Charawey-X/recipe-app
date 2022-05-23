@@ -18,5 +18,5 @@ public interface RecipeDao {
     //DELETE
     void deleteById(int id);
 
-    void clearAllTasks();
+    void clearAllRecipes();
 }
