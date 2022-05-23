@@ -1,15 +1,17 @@
 package model;
 
+import java.util.Objects;
+
 public class Recipe {
     private String title;
     private int prepTime;
     private int cookTime;
-    private String servings;
+    private int servings;
     private String ingredients;
     private String directions;
     private String postedBy;
 
-    public Recipe(String title, int prepTime, int cookTime, String servings, String ingredients, String directions, String postedBy) {
+    public Recipe(String title, int prepTime, int cookTime, int servings, String ingredients, String directions, String postedBy) {
         this.title = title;
         this.prepTime = prepTime;
         this.cookTime = cookTime;
@@ -32,7 +34,7 @@ public class Recipe {
         return cookTime;
     }
 
-    public String getServings() {
+    public int getServings() {
         return servings;
     }
 
@@ -56,7 +58,7 @@ public class Recipe {
     public void setCookTime(int cookTime) {
         this.cookTime = cookTime;
     }
-    public void setServings(String servings) {
+    public void setServings(int servings) {
         this.servings = servings;
     }
 
@@ -70,5 +72,18 @@ public class Recipe {
 
     public void setPostedBy(String postedBy) {
         this.postedBy = postedBy;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Recipe)) return false;
+        Recipe recipe = (Recipe) o;
+        return prepTime == recipe.prepTime && cookTime == recipe.cookTime && servings == recipe.servings && title.equals(recipe.title) && ingredients.equals(recipe.ingredients) && directions.equals(recipe.directions) && postedBy.equals(recipe.postedBy);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(title, prepTime, cookTime, servings, ingredients, directions, postedBy);
     }
 }
