@@ -1,6 +1,7 @@
-package dao;
+package DAO;
 
 import java.util.List;
+import model.Recipe;
 
 public interface RecipeDao {
     // CREATE
@@ -13,7 +14,7 @@ public interface RecipeDao {
     List<Recipe> getAll();
 
     //UPDATE
-    void update(int id, String title, int preptime, int cooktime, int servings, String ingredients, String directions, String postedby);
+    void update(Recipe recipe);
 
     //DELETE
     void deleteById(int id);
