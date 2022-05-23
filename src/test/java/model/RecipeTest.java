@@ -57,6 +57,49 @@ class RecipeTest {
         assertEquals("Blue", testRecipe.getPostedBy());
     }
 
+    @Test
+    public void setTitleSetsCorrectTitle() throws Exception {
+        Recipe testRecipe = setUpRecipe();
+        testRecipe.setTitle("Ugali");
+        assertNotEquals("Biryani",testRecipe.getTitle());
+    }
+    @Test
+    public void setPrepTimeSetsCorrectTime() throws Exception {
+        Recipe testRecipe = setUpRecipe();
+        testRecipe.setPrepTime(40);
+        assertNotEquals(20,testRecipe.getPrepTime());
+    }
+    @Test
+    public void setCookTimeSetsCorrectTime() throws Exception {
+        Recipe testRecipe = setUpRecipe();
+        testRecipe.setCookTime(15);
+        assertNotEquals(30,testRecipe.getCookTime());
+    }
+    @Test
+    public void setServingsSetsCorrectServing() throws Exception {
+        Recipe testRecipe = setUpRecipe();
+        testRecipe.setCookTime(18);
+        assertNotEquals(10,testRecipe.getCookTime());
+    }
+    @Test
+    public void setIngredientsSetsCorrectIngredients() throws Exception {
+        Recipe testRecipe = setUpRecipe();
+        testRecipe.setIngredients("Meat");
+        assertNotEquals("Rice",testRecipe.getIngredients());
+    }
+    @Test
+    public void setDirectionsSetsCorrectDirections() throws Exception {
+        Recipe testRecipe = setUpRecipe();
+        testRecipe.setDirections("Let dough rise");
+        assertNotEquals("Stir",testRecipe.getDirections());
+    }
+    @Test
+    public void setPostedBySetsCorrectPostedBy() throws Exception {
+        Recipe testRecipe = setUpRecipe();
+        testRecipe.setPostedBy("Ivy");
+        assertNotEquals("Blue",testRecipe.getPostedBy());
+    }
+
 
     //HELPER
     public Recipe setUpRecipe (){
