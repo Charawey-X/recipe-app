@@ -30,6 +30,16 @@ class RecipeTest {
         Recipe testRecipe = setUpRecipe();
         assertEquals(20, testRecipe.getPrepTime());
     }
+    @Test
+    public void getCookTimeReturnsCorrectTime() throws Exception {
+        Recipe testRecipe = setUpRecipe();
+        assertEquals(30, testRecipe.getCookTime());
+    }
+    @Test
+    public void getServingsReturnsCorrectTime() throws Exception {
+        Recipe testRecipe = setUpRecipe();
+        assertEquals(10, testRecipe.getServings());
+    }
 
 
     //HELPER
