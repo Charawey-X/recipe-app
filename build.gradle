@@ -1,9 +1,12 @@
 plugins {
     id 'java'
+    id 'application'
 }
 
 group 'org.apache.gradle'
 version '1.0-SNAPSHOT'
+
+mainClassName='App'
 
 repositories {
     mavenCentral()
@@ -20,7 +23,7 @@ dependencies {
     implementation group:  'org.postgresql', name: 'postgresql', version: '42.2.2'
     implementation group: 'postgresql', name: 'postgresql', version: '9.0-801.jdbc4'
     implementation 'com.google.code.gson:gson:2.9.0'
-    implementation 'org.testng:testng:7.1.0'
+    implementation 'org.testng:testng:7.5'
 }
 
 test {
