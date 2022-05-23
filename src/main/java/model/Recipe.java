@@ -1,5 +1,7 @@
 package model;
 
+import java.util.Objects;
+
 public class Recipe {
     private String title;
     private int prepTime;
@@ -70,5 +72,18 @@ public class Recipe {
 
     public void setPostedBy(String postedBy) {
         this.postedBy = postedBy;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Recipe)) return false;
+        Recipe recipe = (Recipe) o;
+        return prepTime == recipe.prepTime && cookTime == recipe.cookTime && title.equals(recipe.title) && servings.equals(recipe.servings) && ingredients.equals(recipe.ingredients) && directions.equals(recipe.directions) && postedBy.equals(recipe.postedBy);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(title, prepTime, cookTime, servings, ingredients, directions, postedBy);
     }
 }
