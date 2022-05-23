@@ -36,9 +36,25 @@ class RecipeTest {
         assertEquals(30, testRecipe.getCookTime());
     }
     @Test
-    public void getServingsReturnsCorrectTime() throws Exception {
+    public void getServingsReturnsCorrectServings() throws Exception {
         Recipe testRecipe = setUpRecipe();
         assertEquals(10, testRecipe.getServings());
+    }
+
+    @Test
+    public void getIngredientsReturnsCorrectIngredients() throws Exception {
+        Recipe testRecipe = setUpRecipe();
+        assertEquals("Rice", testRecipe.getIngredients());
+    }
+    @Test
+    public void getDirectionsReturnsCorrectDirections() throws Exception {
+        Recipe testRecipe = setUpRecipe();
+        assertEquals("Stir", testRecipe.getDirections());
+    }
+    @Test
+    public void getPostedByReturnsCorrectPostedBy() throws Exception {
+        Recipe testRecipe = setUpRecipe();
+        assertEquals("Blue", testRecipe.getPostedBy());
     }
 
 
