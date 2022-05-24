@@ -1,0 +1,23 @@
+.navbar{
+color: white;
+background-color:rgba(15, 14, 14, 0.6);
+}
+.navbar-brand {
+color: white;
+font-size:32px;
+margin-left:20px;
+font-weight:bold;
+margin-right:280px;
+}
+.nav-link{
+color: white;
+font-size:22px;
+margin-right:80px;
+font-weight:bold;
+}
+.image-form{
+height:600px;
+width:60%;
+margin-top:0px;
+margin-bottom: 20px;
+}
