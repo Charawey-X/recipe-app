@@ -44,15 +44,16 @@ public class Sql2oRecipeDao implements RecipeDao{
         }
     }
 
+    //UPDATE
     @Override
-    public void update(int id, Department department) {
-        String sql = "UPDATE departments SET (name, description, numberofemployees) = (:name, :description, :numberOfEmployees) ";
-        try (Connection con = sql2o.open()) {
-            con.createQuery(sql)
-                    .bind(department)
+    public void update(int id, Recipe recipe) {
+        String sql = "UPDATE recipes SET (title, prepTime, cookTime, servings, ingredients, directions, postedBy) = (:title, :prepTime, :cookTime, :servings, :ingredients, :directions, :postedBy)";
+        try (Connection connection = DB.sql2o.open()) {
+            connection.createQuery(sql)
+                    .bind(recipe)
                     .executeUpdate();
         }catch (Sql2oException exc) {
-            System.out.println(exc);
+            System.out.println(exc.getMessage());
         }
     }
 
