@@ -4,14 +4,11 @@ import model.Recipe;
 import org.junit.Rule;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotEquals;
-import static org.junit.Assert.assertTrue;
 import static org.junit.jupiter.api.Assertions.*;
 
 class Sql2oRecipeDaoTest {
 
-    private Sql2oRecipeDaoTest recipeDao;
+    private Sql2oRecipeDao sql2oRecipeDao;
 
     @Rule
     public DatabaseRule database = new DatabaseRule();
@@ -20,54 +17,54 @@ class Sql2oRecipeDaoTest {
     public void addingRecipeSetsId() throws Exception {
         Recipe recipe = setUpRecipe();
         int originalRecipeId = recipe.getId();
-        recipeDao.add(recipe);
+        sql2oRecipeDao.add(recipe);
         assertNotEquals(originalRecipeId, recipe.getId());
     }
 
     @Test
     public void existingRecipesCanBeFoundById() throws Exception {
         Recipe recipe = setUpRecipe();
-        recipeDao.add(recipe);
-        Recipe foundRecipe = recipeDao.findById(recipe.getId());
+        sql2oRecipeDao.add(recipe);
+        Recipe foundRecipe = sql2oRecipeDao.findById(recipe.getId());
         assertEquals(recipe, foundRecipe);
     }
     @Test
-    public void addedRecipesAreReturnedFromgetAll() throws Exception {
+    public void addedRecipesAreReturnedFromGetAll() throws Exception {
         Recipe recipe = setUpRecipe();
-        recipeDao.add(recipe);
-        assertTrue(recipeDao.getAll().size()>0);
+        sql2oRecipeDao.add(recipe);
+        assertTrue(sql2oRecipeDao.getAll().size()>0);
     }
     @Test
     public void updateCorrectlyUpdatesAllFields() throws Exception {
         Recipe recipe = setUpRecipe();
-        recipeDao.update(recipe.getId(), "Pilau", 15, 30, 5, "Meat", "Boil meat", "Ellah");
-        Recipe foundRecipe = recipeDao.findById(recipe.getId());
-        assertEquals("Pilau", foundRecipe.getTitle());
-        assertEquals(15, foundRecipe.getPrepTime());
+        sql2oRecipeDao.update(recipe.getId(),setUpRecipe());
+        Recipe foundRecipe = sql2oRecipeDao.findById(recipe.getId());
+        assertEquals("Biryani", foundRecipe.getTitle());
+        assertEquals(20, foundRecipe.getPrepTime());
         assertEquals(30, foundRecipe.getCookTime());
-        assertEquals(5, foundRecipe.getServings());
-        assertEquals("Meat", foundRecipe.getIngredients());
-        assertEquals("Boil meat", foundRecipe.getDirections());
-        assertEquals("Ellah", foundRecipe.getPostedBy());
+        assertEquals(10, foundRecipe.getServings());
+        assertEquals("Rice", foundRecipe.getIngredients());
+        assertEquals("Stir", foundRecipe.getDirections());
+        assertEquals("Blue", foundRecipe.getPostedBy());
     }
 
 
     @Test
     public void deleteByIdDeletesRecipe() throws Exception {
         Recipe recipe = setUpRecipe();
-        recipeDao.add(recipe);
-        recipeDao.deleteById(recipe.getId());
-        assertEquals(0, recipeDao.getAll().size());
+        sql2oRecipeDao.add(recipe);
+        sql2oRecipeDao.deleteById(recipe.getId());
+        assertEquals(0, sql2oRecipeDao.getAll().size());
     }
 
     @Test
     public void clearAllClearsAll() throws Exception {
         Recipe recipe = setUpRecipe();
         Recipe recipe2 = setUpRecipe();
-        recipeDao.add(recipe);
-        recipeDao.add(recipe2);
-        recipeDao.clearAllRecipes();
-        assertEquals(0, recipeDao.getAll().size());
+        sql2oRecipeDao.add(recipe);
+        sql2oRecipeDao.add(recipe2);
+        sql2oRecipeDao.clearAllRecipes();
+        assertEquals(0, sql2oRecipeDao.getAll().size());
     }
 
 
