@@ -1,0 +1,54 @@
+body{
+background-image: url("/images/background2.jpg");
+background-repeat: no-repeat;
+background-size: 100% 250px;
+}
+.card{
+background: #0F0E0EB2;
+margin-top:200px;
+height: 400px;
+margin-bottom: 20px;
+margin-left: 50px;
+width: 300px;
+}
+h5{
+text-align: center;
+}
+.navbar{
+color: white;
+background-color:rgba(15, 14, 14, 0.6);
+margin-left:50px;
+margin-right:50px;
+border-radius:10px;
+}
+.navbar-brand {
+color: white;
+font-size:32px;
+margin-left:20px;
+font-weight:bold;
+margin-right:280px;
+}
+.nav-link{
+color: white;
+font-size:22px;
+margin-right:80px;
+font-weight:bold;
+}
+.btn2{
+background-color:rgb(186,106,72);
+border-radius: 5px;
+color:white;
+width:200px;
+font-size:18px;
+height:40px;
+margin-left: 30px;
+padding: 5px;
+margin-top: 15px;
+}
+.card-text2{
+margin-top:70px;
+margin-left: 70%;
+}
+.card-subtitle1{
+margin-top: 50px;
+}
