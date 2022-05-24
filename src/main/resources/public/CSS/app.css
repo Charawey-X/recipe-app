@@ -1,0 +1,10 @@
+*{
+padding:0px;
+margin:0px;
+box-sizing:border-box;
+font-family:"poppins";
+}
+.navbar{
+color:white;
+background-color:rgba(15, 14, 14, 0.6);
+}
