@@ -34,3 +34,21 @@ font-size:22px;
 margin-right:80px;
 font-weight:bold;
 }
+.btn2{
+background-color:rgb(186,106,72);
+border-radius: 5px;
+color:white;
+width:200px;
+font-size:18px;
+height:40px;
+margin-left: 30px;
+padding: 5px;
+margin-top: 15px;
+}
+.card-text2{
+margin-top:70px;
+margin-left: 70%;
+}
+.card-subtitle1{
+margin-top: 50px;
+}
