@@ -11,15 +11,7 @@ public class Recipe {
     private String directions;
     private String postedBy;
     private int id;
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
+ 
     public Recipe(String title, int prepTime, int cookTime, int servings, String ingredients, String directions, String postedBy) {
         this.title = title;
         this.prepTime = prepTime;
@@ -50,11 +42,17 @@ public class Recipe {
     public String getIngredients() {
         return ingredients;
     }
+    
     public String getDirections() {
         return directions;
     }
+    
     public String getPostedBy() {
         return postedBy;
+    }
+  
+    public int getId() {
+        return id;
     }
 
     //SETTERS
@@ -81,6 +79,10 @@ public class Recipe {
 
     public void setPostedBy(String postedBy) {
         this.postedBy = postedBy;
+    }
+  
+    public void setId(int id) {
+        this.id = id;
     }
 
     @Override
