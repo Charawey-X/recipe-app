@@ -20,6 +20,11 @@ public class App {
             Map<String, Object> model = new HashMap<String, Object>();
             return new ModelAndView(model, "recipe.hbs");
         }, new HandlebarsTemplateEngine());
+
+        get("/form", (request, response) -> {
+            Map<String, Object> model = new HashMap<String, Object>();
+            return new ModelAndView(model, "form.hbs");
+        }, new HandlebarsTemplateEngine());
     }
 
 }
