@@ -10,6 +10,15 @@ public class Recipe {
     private String ingredients;
     private String directions;
     private String postedBy;
+    private int id;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public Recipe(String title, int prepTime, int cookTime, int servings, String ingredients, String directions, String postedBy) {
         this.title = title;
