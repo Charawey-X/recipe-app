@@ -11,6 +11,7 @@ background-color:rgba(15, 14, 14, 0.6);
 border-radius:20px;
 margin-top:1.5%;
 height:50px;
+margin-right:10px;
 }
 .navbar-brand {
 color: white;
@@ -31,9 +32,15 @@ font-weight:600;
 .nav-link:hover{
 color:#F4511E;
 }
-.image-form{
-height:600px;
-width:60%;
-margin-top:0px;
-margin-bottom: 20px;
+body{
+background-image: url(/images/background3.jpg);
+background-size: 30% 700px;
+background-repeat:no-repeat;
+}
+.heading{
+margin-left:800px;
+margin-top:5px;
+font-weight: 600;
+font-size: 18px;
+color:rgb(186,106,72);
 }
