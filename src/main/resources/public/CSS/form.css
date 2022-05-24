@@ -44,3 +44,27 @@ font-weight: 600;
 font-size: 18px;
 color:rgb(186,106,72);
 }
+form{
+margin-left:450px !important;
+margin-right: 10px !important;
+}
+.btn{
+background-color:rgb(186,106,72);
+border-radius: 5px;
+color:white;
+width:80px;
+font-size:18px;
+height:40px;
+margin-left: 350px !important;
+padding: 5px;
+margin-top: 15px;
+font-weight:700;
+
+}
+.btn:hover{
+background-color:#F4511E;
+}
+.form-label{
+font-size: 18px;
+font-weight:500px;
+}
