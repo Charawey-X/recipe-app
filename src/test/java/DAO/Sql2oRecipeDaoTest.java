@@ -2,19 +2,25 @@ package DAO;
 
 import model.Recipe;
 import org.junit.Rule;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 class Sql2oRecipeDaoTest {
 
-    private Sql2oRecipeDao sql2oRecipeDao;
-
     @Rule
     public DatabaseRule database = new DatabaseRule();
 
+    private Sql2oRecipeDao sql2oRecipeDao = new Sql2oRecipeDao();
+
+    @AfterEach
+    void tearDown(){
+
+        sql2oRecipeDao.clearAllRecipes();
+    }
+
     @Test
-    public void addingRecipeSetsId() throws Exception {
+    public void addingRecipeSetsId() {
         Recipe recipe = setUpRecipe();
         int originalRecipeId = recipe.getId();
         sql2oRecipeDao.add(recipe);
