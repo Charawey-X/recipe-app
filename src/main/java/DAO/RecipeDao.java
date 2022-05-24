@@ -14,7 +14,7 @@ public interface RecipeDao {
     List<Recipe> getAll();
 
     //UPDATE
-    void update(Recipe recipe);
+    void update(int id, Recipe recipe);
 
     //DELETE
     void deleteById(int id);
