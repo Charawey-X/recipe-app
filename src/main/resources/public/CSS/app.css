@@ -4,7 +4,37 @@ margin:0px;
 box-sizing:border-box;
 font-family:"poppins";
 }
+body{
+background-image: url("/images/background1.jpg");
+background-repeat: no-repeat;
+background-size: cover;
+
+}
 .navbar{
-color:white;
+color: white;
 background-color:rgba(15, 14, 14, 0.6);
+margin-left:50px;
+margin-right:50px;
+border-radius:10px;
+}
+.navbar-brand {
+color: white;
+font-size:32px;
+margin-left:10px;
+}
+.nav-link{
+color: white;
+font-size:20px;
+margin-right:100px;
+}
+.btn1{
+background-color:rgb(186,106,72);
+border-radius: 10px;
+color:white;
+margin-top: 350px;
+margin-left: 80%;
+width:170px;
+font-size:20px;
+height:40px;
+
 }
