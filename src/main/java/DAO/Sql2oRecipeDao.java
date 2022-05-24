@@ -24,7 +24,7 @@ public class Sql2oRecipeDao implements RecipeDao{
         }
     }
 
-    //READ - LIST
+    //READ - ALL
     @Override
     public List<Recipe> getAll() {
         try (Connection connection = DB.sql2o.open()) {
@@ -57,23 +57,24 @@ public class Sql2oRecipeDao implements RecipeDao{
         }
     }
 
+    //DELETE - INDIVIDUAL
     @Override
     public void deleteById(int id) {
-        String sql = "DELETE FROM departments WHERE id = :id ;";
-        try (Connection con = sql2o.open()) {
-            con.createQuery(sql)
+        String sql = "DELETE FROM recipes WHERE id = :id ;";
+        try (Connection connection = DB.sql2o.open()) {
+            connection.createQuery(sql)
                     .addParameter("id", id)
                     .executeUpdate();
         }
     }
+
+    //DELETE - ALL
     @Override
-    public void clearAll() {
-        String sql = "DELETE FROM departments;";
-        try (Connection con = sql2o.open()) {
-            con.createQuery(sql)
+    public void clearAllRecipes() {
+        String sql = "DELETE FROM recipes;";
+        try (Connection connection = DB.sql2o.open()) {
+            connection.createQuery(sql)
                     .executeUpdate();
         }
     }
-
-
 }
