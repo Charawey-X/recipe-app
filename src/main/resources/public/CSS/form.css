@@ -1,19 +1,35 @@
+*{
+padding:0px;
+margin:0px;
+box-sizing:border-box;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+}
 .navbar{
 color: white;
+margin-left: 450px;
 background-color:rgba(15, 14, 14, 0.6);
+border-radius:20px;
+margin-top:1.5%;
+height:50px;
 }
 .navbar-brand {
 color: white;
 font-size:32px;
-margin-left:20px;
+margin-left:30px;
 font-weight:bold;
-margin-right:280px;
+margin-right:220px;
+}
+.navbar-brand:hover{
+color:#F4511E;
 }
 .nav-link{
 color: white;
-font-size:22px;
-margin-right:80px;
-font-weight:bold;
+font-size:25px;
+margin-right:70px;
+font-weight:600;
+}
+.nav-link:hover{
+color:#F4511E;
 }
 .image-form{
 height:600px;

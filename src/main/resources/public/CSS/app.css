@@ -2,7 +2,7 @@
 padding:0px;
 margin:0px;
 box-sizing:border-box;
-font-family:"poppins";
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
 }
 body{
 background-image: url("/images/background1.jpg");
@@ -20,15 +20,21 @@ border-radius:10px;
 .navbar-brand {
 color: white;
 font-size:32px;
-margin-left:20px;
+margin-left:50px;
 font-weight:bold;
-margin-right:280px;
+margin-right:380px;
+}
+.navbar-brand:hover{
+color:#F4511E;
 }
 .nav-link{
 color: white;
-font-size:22px;
+font-size:25px;
 margin-right:80px;
-font-weight:bold;
+font-weight:700;
+}
+.nav-link:hover{
+color:#F4511E;
 }
 .btn1{
 background-color:rgb(186,106,72);
@@ -39,4 +45,8 @@ margin-left: 80%;
 width:150px;
 font-size:20px;
 height:40px;
+font-weight:700;
+}
+.btn1:hover{
+background-color:#F4511E;
 }
