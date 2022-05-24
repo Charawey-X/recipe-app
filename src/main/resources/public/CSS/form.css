@@ -1,9 +1,6 @@
 .navbar{
 color: white;
 background-color:rgba(15, 14, 14, 0.6);
-margin-left:50px;
-margin-right:50px;
-border-radius:10px;
 }
 .navbar-brand {
 color: white;
@@ -17,4 +14,10 @@ color: white;
 font-size:22px;
 margin-right:80px;
 font-weight:bold;
+}
+.image-form{
+height:600px;
+width:60%;
+margin-top:0px;
+margin-bottom: 20px;
 }
