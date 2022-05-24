@@ -24,7 +24,7 @@ public class Sql2oRecipeDao implements RecipeDao{
         }
     }
 
-    //READ - LIST
+    //READ - ALL
     @Override
     public List<Recipe> getAll() {
         try (Connection connection = DB.sql2o.open()) {
@@ -44,35 +44,37 @@ public class Sql2oRecipeDao implements RecipeDao{
         }
     }
 
+    //UPDATE
     @Override
-    public void update(int id, Department department) {
-        String sql = "UPDATE departments SET (name, description, numberofemployees) = (:name, :description, :numberOfEmployees) ";
-        try (Connection con = sql2o.open()) {
-            con.createQuery(sql)
-                    .bind(department)
+    public void update(int id, Recipe recipe) {
+        String sql = "UPDATE recipes SET (title, prepTime, cookTime, servings, ingredients, directions, postedBy) = (:title, :prepTime, :cookTime, :servings, :ingredients, :directions, :postedBy)";
+        try (Connection connection = DB.sql2o.open()) {
+            connection.createQuery(sql)
+                    .bind(recipe)
                     .executeUpdate();
         }catch (Sql2oException exc) {
-            System.out.println(exc);
+            System.out.println(exc.getMessage());
         }
     }
 
+    //DELETE - INDIVIDUAL
     @Override
     public void deleteById(int id) {
-        String sql = "DELETE FROM departments WHERE id = :id ;";
-        try (Connection con = sql2o.open()) {
-            con.createQuery(sql)
+        String sql = "DELETE FROM recipes WHERE id = :id ;";
+        try (Connection connection = DB.sql2o.open()) {
+            connection.createQuery(sql)
                     .addParameter("id", id)
                     .executeUpdate();
         }
     }
+
+    //DELETE - ALL
     @Override
-    public void clearAll() {
-        String sql = "DELETE FROM departments;";
-        try (Connection con = sql2o.open()) {
-            con.createQuery(sql)
+    public void clearAllRecipes() {
+        String sql = "DELETE FROM recipes;";
+        try (Connection connection = DB.sql2o.open()) {
+            connection.createQuery(sql)
                     .executeUpdate();
         }
     }
-
-
 }
