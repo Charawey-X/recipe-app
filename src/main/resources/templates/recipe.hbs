@@ -32,16 +32,34 @@
         </ul>
     </div>
 </nav>
-    <div class="card" style="width: 18rem;">
-        <div class="card-body">
-            <h5 class="card-title">Title</h5>
-            <p class="card-text">prep:</p>
-            <p class="card-text">cook:</p>
-            <p class="card-text">servings:</p>
-            <h6 class="card-subtitle mb-2">Ingredients</h6>
-            <h6 class="card-subtitle1 mb-2">Directions</h6>
-            <p class="card-text2">By:</p>
-            <buttton class="btn">Update</buttton>
-            <buttton class="btn">Delete</buttton>
-        </div>
+<!--    <div class="card" style="width: 18rem;">-->
+<!--        <div class="card-body">-->
+<!--            <h5 class="card-title">Title</h5>-->
+<!--            <p class="card-text">prep:</p>-->
+<!--            <p class="card-text">cook:</p>-->
+<!--            <p class="card-text">servings:</p>-->
+<!--            <h6 class="card-subtitle mb-2">Ingredients</h6>-->
+<!--            <h6 class="card-subtitle1 mb-2">Directions</h6>-->
+<!--            <p class="card-text2">By:</p>-->
+<!--            <buttton class="btn">Update</buttton>-->
+<!--            <buttton class="btn">Delete</buttton>-->
+<!--        </div>-->
+<!--    </div>-->
+
+<div class="card" style="width: 18rem;">
+{{#each recipeByTitle}}
+    <div>
+        <ul>
+            <li>Title: <span>{{title}}</span></li>
+            <li>prep: <span>{{prepTime}}</span></li>
+            <li>cook: <span>{{cookTime}}</span></li>
+            <li>servings: <span>{{servings}}</span></li>
+            <li>Ingredients: <span>{{ingredients}}</span></li>
+            <li>Directions: <span>{{directions}}</span></li>
+            <li>By: <span>{{postedBy}}</span></li>
+        </ul>
     </div>
+{{/each}}
+    <button class="btn" ><a href="/recipe/{{id}}/update">Update</a></button>
+    <button class="btn" ><a href="/recipe/{{id}}/delete">Delete</a></button>
+</div>
