@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        <script src="https://kit.fontawesome.com/cb7cf38d2f.js" crossorigin="anonymous"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@700&family=Open+Sans&family=Vujahday+Script&display=swap" rel="stylesheet">
+        <link rel='stylesheet' href="/CSS/form.css">
+        {{#block "styles"}}{{/block}}
+        <title>Recipe App</title>
+    </head>
+<body>
+<nav class="navbar navbar-expand-lg">
+    <a class="navbar-brand " href="/">Recipe App</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ">
+            <li class="nav-item active">
+                <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/recipe"> View Recipes</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+{{#if updateRecipe}}
+    <h5 class="heading">UPDATE RECIPE</h5>
+    <form action="/recipe" method="post" class="row g-3">
+        <label for="title" class="Title">Title</label>
+        <input type="text" class="form-control" id="title" name="title"><br><br>
+        <div class="col-md-6">
+            <label for="preparation" class="form-label">Preparation time</label>
+            <input type="number" class="form-control" id="prepTime" name="prepTime">
+        </div>
+        <div class="col-md-6">
+            <label for="cook" class="form-label">Cook time</label>
+            <input type="number" class="form-control" id="cook" name="cookTime"><br><br>
+        </div> <div class="col-md-6">
+        <label for="servings" class="form-label">Servings</label>
+        <input type="number" class="form-control" id="servings" name="servings">
+    </div>
+        <div class="col-md-6">
+            <label for="post" class="form-label">Posted by</label>
+            <input type="text" class="form-control" id="post" name="postedBy"><br><br>
+        </div>
+        <div class="col-md-6">
+            <p><label for="ingredients">Ingredients</label></p>
+            <textarea id="ingredients" name="ingredients"  class="form-control" rows="4" cols="50"></textarea>
+        </div>
+        <div class="col-md-6">
+            <p><label for="directions">Direction</label></p>
+            <textarea id="directions" name="directions"  class="form-control" rows="4" cols="50"></textarea>
+        </div>
+        <div class="col-6">
+            <button type="submit" class="btn">Submit</button>
+        </div>
+    </form>
+{{else}}
+    <h5 class="heading">ADD RECIPE</h5>
+    <form action="/recipe" method="post" class="row g-3">
+        <label for="title" class="Title">Title</label>
+        <input type="text" class="form-control" id="title" name="title"><br><br>
+        <div class="col-md-6">
+            <label for="preparation" class="form-label">Preparation time</label>
+            <input type="number" class="form-control" id="prepTime" name="prepTime">
+        </div>
+        <div class="col-md-6">
+            <label for="cook" class="form-label">Cook time</label>
+            <input type="number" class="form-control" id="cook" name="cookTime"><br><br>
+        </div> <div class="col-md-6">
+        <label for="servings" class="form-label">Servings</label>
+        <input type="number" class="form-control" id="servings" name="servings">
+    </div>
+        <div class="col-md-6">
+            <label for="post" class="form-label">Posted by</label>
+            <input type="text" class="form-control" id="post" name="postedBy"><br><br>
+        </div>
+        <div class="col-md-6">
+            <p><label for="ingredients">Ingredients</label></p>
+            <textarea id="ingredients" name="ingredients"  class="form-control" rows="4" cols="50"></textarea>
+        </div>
+        <div class="col-md-6">
+            <p><label for="directions">Direction</label></p>
+            <textarea id="directions" name="directions"  class="form-control" rows="4" cols="50"></textarea>
+        </div>
+        <div class="col-6">
+            <button type="submit" class="btn">Submit</button>
+        </div>
+    </form>
+{{/if }}

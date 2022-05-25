@@ -1,0 +1,74 @@
+*{
+padding:0px;
+margin:0px;
+box-sizing:border-box;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+}
+.navbar{
+color: white;
+margin-left: 420px;
+background-color:rgba(15, 14, 14, 0.6);
+border-radius:20px;
+margin-top:1.5%;
+height:50px;
+margin-right:10px;
+}
+.navbar-brand {
+color: white;
+font-size:32px;
+margin-left:30px;
+font-weight:bold;
+margin-right:220px;
+}
+.navbar-brand:hover{
+color:#F4511E;
+}
+.nav-link{
+color: white;
+font-size:25px;
+margin-right:70px;
+font-weight:600;
+}
+.nav-link:hover{
+color:#F4511E;
+}
+body{
+background-image: url(/images/background3.jpg);
+background-size: 30% 700px;
+background-repeat:no-repeat;
+}
+.heading{
+margin-left:800px;
+margin-top:5px;
+font-weight: 600;
+font-size: 18px;
+color:rgb(186,106,72);
+}
+form{
+margin-left:450px !important;
+margin-right: 10px !important;
+}
+.btn{
+background-color:rgb(186,106,72);
+border-radius: 5px;
+color:white;
+width:80px;
+font-size:18px;
+height:40px;
+margin-left: 350px !important;
+padding: 5px;
+margin-top: 15px;
+font-weight:700;
+
+}
+.btn:hover{
+background-color:#F4511E;
+}
+.form-label{
+font-size: 18px;
+font-weight:500px;
+}
+.form-control{
+background-color: #0F0E0E99;
+
+}

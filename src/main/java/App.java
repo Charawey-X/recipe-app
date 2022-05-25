@@ -5,15 +5,23 @@ import spark.ModelAndView;
 import spark.template.handlebars.HandlebarsTemplateEngine;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import static spark.Spark.*;
 import static spark.Spark.staticFileLocation;
 
 public class App {
+    static int getHerokuAssignedPort() {
+        ProcessBuilder processBuilder = new ProcessBuilder();
+        if (processBuilder.environment().get("PORT") != null) {
+            return Integer.parseInt(processBuilder.environment().get("PORT"));
+        }
+        return 4567;
+    }
     public static void main(String[] args) {
+        port(getHerokuAssignedPort());
         staticFileLocation("/public");
-        Sql2o sql2o = new Sql2o("jdbc:postgresql://localhost:5432/recipe_app", "x", "230620");
         Sql2oRecipeDao sql2oRecipeDao = new Sql2oRecipeDao();
 
 
@@ -24,6 +32,8 @@ public class App {
 
         get("/recipe", (request, response) -> {
             Map<String, Object> model = new HashMap<String, Object>();
+            List<Recipe> recipes = sql2oRecipeDao.getAll();
+            model.put("recipes",recipes);
             return new ModelAndView(model, "recipe.hbs");
         }, new HandlebarsTemplateEngine());
 
@@ -69,17 +79,17 @@ public class App {
             String directions = request.queryParams("directions");
             String postedBy = request.queryParams("postedBy");
             Recipe updatedRecipe= new Recipe(title, prepTime, cookTime, servings, ingredients, directions, postedBy);
-            sql2oRecipeDao.update(updatedRecipe.getId(),updatedRecipe);
-            model.put("updateRecipe", updateRecipe);
+            sql2oRecipeDao.update(updateRecipe.getId(),updatedRecipe);
+            model.put("updatedRecipe", updatedRecipe);
             return new ModelAndView(model, "index.hbs");
         }, new HandlebarsTemplateEngine());
 
-        get("/recipe/:id/delete",(request, response) -> {
+        get("/card/:id/delete",(request, response) -> {
             Map<String,Object> model = new HashMap<>();
             int findRecipe =Integer.parseInt(request.params("id"));
             Recipe deleteRecipe = sql2oRecipeDao.findById(findRecipe);
             model.put("deleteRecipe",deleteRecipe);
-            sql2oRecipeDao.deleteById(findRecipe);
+            sql2oRecipeDao.deleteById(deleteRecipe.getId());
             return new ModelAndView(model,"index.hbs");
         }, new HandlebarsTemplateEngine());
     }
