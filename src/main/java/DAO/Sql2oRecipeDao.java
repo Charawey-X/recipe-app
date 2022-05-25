@@ -11,10 +11,6 @@ import java.util.List;
 
 public class Sql2oRecipeDao implements RecipeDao{
 
-    public Sql2oRecipeDao(Sql2o sql2o) {
-
-    }
-
     //CREATE
     @Override
     public void add(Recipe recipe) {
