@@ -44,9 +44,9 @@ public class App {
 
             Recipe createdRecipe = new Recipe(title, prepTime, cookTime, servings, ingredients, directions, postedBy);
             sql2oRecipeDao.add(createdRecipe);
+            model.put("createdRecipe",createdRecipe);
             System.out.println(sql2oRecipeDao.getAll());
-            response.redirect("/recipe");
-            return null;
+            return new ModelAndView(model,"index.hbs");
         }, new HandlebarsTemplateEngine());
 
         get("/recipe/:id/update",(request, response) -> {
@@ -71,7 +71,7 @@ public class App {
             Recipe updatedRecipe= new Recipe(title, prepTime, cookTime, servings, ingredients, directions, postedBy);
             sql2oRecipeDao.update(updatedRecipe.getId(),updatedRecipe);
             model.put("updateRecipe", updateRecipe);
-            return new ModelAndView(model, "recipe.hbs");
+            return new ModelAndView(model, "index.hbs");
         }, new HandlebarsTemplateEngine());
 
         get("/recipe/:id/delete",(request, response) -> {
@@ -80,7 +80,7 @@ public class App {
             Recipe deleteRecipe = sql2oRecipeDao.findById(findRecipe);
             model.put("deleteRecipe",deleteRecipe);
             sql2oRecipeDao.deleteById(findRecipe);
-            return new ModelAndView(model,"recipe.hbs");
+            return new ModelAndView(model,"index.hbs");
         }, new HandlebarsTemplateEngine());
     }
 
