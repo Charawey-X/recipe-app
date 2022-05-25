@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-<head>
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
@@ -33,8 +32,9 @@
     </div>
 </nav>
 
-<div class="card" style="width: 18rem;">
-{{#each createdRecipe}}
+{{#if recipes}}
+{{#each recipes}}
+    <div class="card" style="width: 18rem;">
     <div>
         <ul>
             <li>Title: <span>{{title}}</span></li>
@@ -46,7 +46,10 @@
             <li>By: <span>{{postedBy}}</span></li>
         </ul>
     </div>
+        <button class="btn" ><a href="/recipe/{{id}}/update">Update</a></button>
+        <button class="btn" ><a href="/card/{{id}}/delete">Delete</a></button>
+    </div>
 {{/each}}
-    <button class="btn" ><a href="/recipe/{{id}}/update">Update</a></button>
-    <button class="btn" ><a href="/recipe/{{id}}/delete">Delete</a></button>
-</div>
+
+{{/if}}
+</body>

@@ -30,37 +30,37 @@
     </div>
 </nav>
 {{#if updateRecipe}}
-<h5 class="heading">UPDATE RECIPE</h5>
-<form action="/recipe" method="post" class="row g-3">
+    <h5 class="heading">UPDATE RECIPE</h5>
+    <form action="/recipe" method="post" class="row g-3">
         <label for="title" class="Title">Title</label>
         <input type="text" class="form-control" id="title" name="title"><br><br>
-       <div class="col-md-6">
-           <label for="preparation" class="form-label">Preparation time</label>
-           <input type="time" class="form-control" id="prepTime" name="prepTime">
-       </div>
+        <div class="col-md-6">
+            <label for="preparation" class="form-label">Preparation time</label>
+            <input type="number" class="form-control" id="prepTime" name="prepTime">
+        </div>
         <div class="col-md-6">
             <label for="cook" class="form-label">Cook time</label>
-            <input type="time" class="form-control" id="cook" name="cookTime"><br><br>
+            <input type="number" class="form-control" id="cook" name="cookTime"><br><br>
         </div> <div class="col-md-6">
-    <label for="servings" class="form-label">Servings</label>
-    <input type="text" class="form-control" id="servings" name="servings">
-</div>
-    <div class="col-md-6">
-        <label for="post" class="form-label">Posted by</label>
-        <input type="text" class="form-control" id="post" name="postedBy"><br><br>
+        <label for="servings" class="form-label">Servings</label>
+        <input type="number" class="form-control" id="servings" name="servings">
     </div>
-    <div class="col-md-6">
-        <p><label for="ingredients">Ingredients</label></p>
-        <textarea id="ingredients" name="ingredients"  class="form-control" rows="4" cols="50"></textarea>
-    </div>
-    <div class="col-md-6">
-        <p><label for="directions">Direction</label></p>
-        <textarea id="directions" name="directions"  class="form-control" rows="4" cols="50"></textarea>
-    </div>
-    <div class="col-6">
-        <button type="submit" class="btn">Submit</button>
-    </div>
-</form>
+        <div class="col-md-6">
+            <label for="post" class="form-label">Posted by</label>
+            <input type="text" class="form-control" id="post" name="postedBy"><br><br>
+        </div>
+        <div class="col-md-6">
+            <p><label for="ingredients">Ingredients</label></p>
+            <textarea id="ingredients" name="ingredients"  class="form-control" rows="4" cols="50"></textarea>
+        </div>
+        <div class="col-md-6">
+            <p><label for="directions">Direction</label></p>
+            <textarea id="directions" name="directions"  class="form-control" rows="4" cols="50"></textarea>
+        </div>
+        <div class="col-6">
+            <button type="submit" class="btn">Submit</button>
+        </div>
+    </form>
 {{else}}
     <h5 class="heading">ADD RECIPE</h5>
     <form action="/recipe" method="post" class="row g-3">

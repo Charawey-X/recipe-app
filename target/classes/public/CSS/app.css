@@ -1,0 +1,56 @@
+*{
+padding:0px;
+margin:0px;
+box-sizing:border-box;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+}
+body{
+background-image: url("/images/background1.jpg");
+background-repeat: no-repeat;
+background-size: cover;
+
+}
+.navbar{
+color: white;
+background-color:rgba(15, 14, 14, 0.6);
+margin-left:50px;
+margin-right:50px;
+border-radius:10px;
+}
+.navbar-brand {
+color: white;
+font-size:32px;
+margin-left:50px;
+font-weight:bold;
+margin-right:380px;
+}
+.navbar-brand:hover{
+color:#F4511E;
+}
+.nav-link{
+color: white;
+font-size:25px;
+margin-right:80px;
+font-weight:700;
+}
+.nav-link:hover{
+color:#F4511E;
+}
+.btn1 a{
+color: white;
+text-decoration: none;
+}
+.btn1{
+background-color:rgb(186,106,72);
+border-radius: 10px;
+color:white;
+margin-top: 350px;
+margin-left: 80%;
+width:150px;
+font-size:20px;
+height:40px;
+font-weight:700;
+}
+.btn1:hover{
+background-color:#F4511E;
+}
