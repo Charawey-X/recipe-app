@@ -14,7 +14,7 @@
     </head>
 <body>
 <nav class="navbar navbar-expand-lg">
-    <a class="navbar-brand " href="#">Recipe App</a>
+    <a class="navbar-brand " href="/">Recipe App</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -24,20 +24,39 @@
                 <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/recipe">Recipe</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/form">Add Recipe</a>
+                <a class="nav-link" href="/recipe"> View Recipes</a>
             </li>
         </ul>
     </div>
 </nav>
-<div class="row">
-    <div class="col">
-        <img class="image-form" src="./images/background3.jpg" alt="form-image">
-    </div>
-    <div class="col">
-
-
-    </div>
+<h5 class="heading">ADD RECIPE</h5>
+<form class="row g-3">
+        <label for="title" class="Title">Title</label>
+        <input type="text" class="form-control" id="title"><br><br>
+       <div class="col-md-6">
+           <label for="preparation" class="form-label">Preparation time</label>
+           <input type="time" class="form-control" id="preparation">
+       </div>
+        <div class="col-md-6">
+            <label for="cook" class="form-label">Cook time</label>
+            <input type="time" class="form-control" id="cook"><br><br>
+        </div> <div class="col-md-6">
+    <label for="servings" class="form-label">Servings</label>
+    <input type="text" class="form-control" id="servings">
 </div>
+    <div class="col-md-6">
+        <label for="post" class="form-label">Posted by</label>
+        <input type="text" class="form-control" id="post"><br><br>
+    </div>
+    <div class="col-md-6">
+        <label for="Ingredients" class="form-label">Ingredients</label>
+        <input type="text" class="form-control" id="Ingredients">
+    </div>
+    <div class="col-md-6">
+        <label for="Directions" class="form-label">Directions</label>
+        <input type="text" class="form-control" id="Directions">
+    </div>
+    <div class="col-6">
+        <button type="submit" class="btn">Submit</button>
+    </div>
+</form>

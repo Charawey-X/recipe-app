@@ -1,3 +1,9 @@
+*{
+padding:0px;
+margin:0px;
+box-sizing:border-box;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+}
 body{
 background-image: url("/images/background2.jpg");
 background-repeat: no-repeat;
@@ -6,15 +12,21 @@ background-size: 100% 250px;
 .card{
 background: #0F0E0EB2;
 margin-top:200px;
-height: 400px;
+height: 550px;
 margin-bottom: 20px;
 margin-left: 50px;
-width: 300px;
+width: 500px !important;
+color: white;
+border-radius:20px;
+font-weight:500;
 }
 h5{
 text-align: center;
+font-weight:600;
 }
 .navbar{
+margin-top:1.5%;
+height:50px;
 color: white;
 background-color:rgba(15, 14, 14, 0.6);
 margin-left:50px;
@@ -24,31 +36,46 @@ border-radius:10px;
 .navbar-brand {
 color: white;
 font-size:32px;
-margin-left:20px;
+margin-left:50px;
 font-weight:bold;
-margin-right:280px;
+margin-right:340px;
+}
+.navbar-brand:hover{
+color:#F4511E;
 }
 .nav-link{
 color: white;
-font-size:22px;
+font-size:25px;
 margin-right:80px;
-font-weight:bold;
+font-weight:600;
 }
-.btn2{
+.nav-link:hover{
+color:#F4511E;
+}
+.btn{
 background-color:rgb(186,106,72);
 border-radius: 5px;
 color:white;
-width:200px;
+width:80px;
 font-size:18px;
 height:40px;
 margin-left: 30px;
 padding: 5px;
 margin-top: 15px;
+font-weight:700;
+}
+.btn:hover{
+background-color:#F4511E;
 }
 .card-text2{
 margin-top:70px;
 margin-left: 70%;
+font-weight:500;
 }
 .card-subtitle1{
-margin-top: 50px;
+margin-top: 100px;
+font-weight:500;
+}
+.card-subtitle{
+font-weight:500;
 }
