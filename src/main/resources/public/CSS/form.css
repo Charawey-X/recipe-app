@@ -6,7 +6,7 @@ box-sizing:border-box;
 }
 .navbar{
 color: white;
-margin-left: 450px;
+margin-left: 420px;
 background-color:rgba(15, 14, 14, 0.6);
 border-radius:20px;
 margin-top:1.5%;
@@ -67,4 +67,8 @@ background-color:#F4511E;
 .form-label{
 font-size: 18px;
 font-weight:500px;
+}
+.form-control{
+background-color: #0F0E0E99;
+
 }
